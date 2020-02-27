@@ -366,7 +366,7 @@ NgramLM::SetModel(const SharedPtr<NgramModel> &m,
     _pModel = m;
     for (size_t o = 1; o <= _order; ++o) {
         size_t len = m->sizes(o);
-        NgramModel::ApplySort(ngramMap[o], _countVectors[o], len, 0);
+        NgramModel::ApplySort(ngramMap[o], _countVectors[o], len, 0L);
         for (size_t f = 0; f < _featureList[o].size(); ++f)
             NgramModel::ApplySort(ngramMap[o], _featureList[o][f], len, 0.0);
     }

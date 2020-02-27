@@ -198,7 +198,7 @@ NgramModel::LoadCounts(vector<CountVector> &countVectors,
                 if (newNgram && (size_t)index >= countVectors[order].length())
                     countVectors[order].resize(countVectors[order].length() * 2,
                                                0);
-                countVectors[order][index] += atoi(token);
+                countVectors[order][index] += atol(token);
                 break;  // Move to next line.
             }
 

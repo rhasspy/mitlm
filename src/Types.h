@@ -51,7 +51,7 @@ typedef unsigned int   uint;
 // Defines the size of basic types.
 typedef int    VocabIndex;
 typedef int    NgramIndex;
-typedef int    Count;
+typedef long    Count;
 typedef float  LProb;
 typedef double Prob;
 typedef double Param;
