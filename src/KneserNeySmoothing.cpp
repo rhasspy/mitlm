@@ -243,7 +243,7 @@ KneserNeySmoothing::_EstimateMasked(const NgramLMMask *pMask,
 //    discounts.masked(discMask) = _discParams[min(_effCounts, _discOrder)];
     for (size_t i = 0; i < _effCounts.length(); i++)
         if (discMask[i])
-            discounts[i] = _discParams[std::min(_effCounts[i], (long)_discOrder)];
+            discounts[i] = _discParams[std::min(_effCounts[i], (Count)_discOrder)];
 
     // Compute backoff weights.
     const BitVector &bowMask(pMask->BowMaskVectors[_order - 1]);
@@ -317,7 +317,7 @@ KneserNeySmoothing::_EstimateWeightedMasked(const NgramLMMask *pMask,
 //    discounts.masked(discMask) = _discParams[min(_effCounts, _discOrder)];
     for (size_t i = 0; i < _effCounts.length(); i++)
         if (discMask[i])
-            discounts[i] = _discParams[std::min(_effCounts[i], (long)_discOrder)];
+            discounts[i] = _discParams[std::min(_effCounts[i], (Count)_discOrder)];
 
     // Compute backoff weights.
     const BitVector &bowMask(pMask->BowMaskVectors[_order - 1]);
